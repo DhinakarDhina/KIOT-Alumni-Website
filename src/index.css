@@ -1,0 +1,211 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Brand Colors - Clean & Professional */
+    --primary: 167 70% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* AI Theme Colors - Simplified */
+    --ai-primary: 167 70% 42%;
+    --ai-secondary: 217 91% 60%;
+    --ai-accent: 167 60% 50%;
+    --ai-surface: 210 20% 98%;
+    --ai-border: 214 32% 91%;
+    
+    /* Background & Surface */
+    --background: 0 0% 100%;
+    --foreground: 222 84% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+    
+    /* UI Elements */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 167 70% 42%;
+    --radius: 0.75rem;
+    
+    /* Charts */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    
+    /* Simplified Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--ai-surface)) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(167 70% 42%) 0%, hsl(217 91% 60%) 100%);
+    --gradient-header: linear-gradient(90deg, hsl(167 70% 42%) 0%, hsl(180 65% 45%) 50%, hsl(217 91% 60%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(167 70% 42%) 0%, hsl(160 70% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(200 91% 60%) 100%);
+    
+    /* Clean Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
+  .dark {
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
+    --card: 222 84% 5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 5%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 167 70% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 167 70% 42%;
+    --ai-surface: 217 33% 17%;
+    --ai-border: 217 33% 25%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-header {
+    background: var(--gradient-header);
+  }
+  
+  .gradient-button {
+    background: var(--gradient-button);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .story-link {
+    @apply relative inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .animate-pulse-green {
+    animation: pulseGreen 2s infinite;
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+  
+  .glow-text {
+    animation: glowShine 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+@keyframes glowShine {
+  0% {
+    text-shadow: 0 0 20px hsl(167 70% 42% / 0.8), 
+                 0 0 40px hsl(167 70% 42% / 0.6),
+                 0 0 60px hsl(210 70% 45% / 0.4);
+  }
+  25% {
+    text-shadow: 0 0 20px hsl(210 70% 45% / 0.8), 
+                 0 0 40px hsl(45 100% 51% / 0.6),
+                 0 0 60px hsl(167 70% 42% / 0.4);
+  }
+  50% {
+    text-shadow: 0 0 20px hsl(45 100% 51% / 0.8), 
+                 0 0 40px hsl(180 65% 45% / 0.6),
+                 0 0 60px hsl(210 70% 45% / 0.4);
+  }
+  75% {
+    text-shadow: 0 0 20px hsl(180 65% 45% / 0.8), 
+                 0 0 40px hsl(167 70% 42% / 0.6),
+                 0 0 60px hsl(45 100% 51% / 0.4);
+  }
+  100% {
+    text-shadow: 0 0 20px hsl(167 70% 42% / 0.8), 
+                 0 0 40px hsl(167 70% 42% / 0.6),
+                 0 0 60px hsl(210 70% 45% / 0.4);
+  }
+}
+
+/* Add navigation specific styles */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 200px;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.nav-dropdown:hover .nav-dropdown-content {
+  display: block;
+}
