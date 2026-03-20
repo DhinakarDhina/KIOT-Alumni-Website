@@ -4,6 +4,8 @@ import { GlassCard } from '@/components/ui/glass-card';
 import { LineChart, Line, AreaChart, Area, BarChart, Bar, RadialBarChart, RadialBar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { motion } from 'framer-motion';
 
+//DashboardCharts
+
 const pointsData = [
   { month: 'Jan', points: 120 },
   { month: 'Feb', points: 180 },
